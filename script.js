@@ -1,10 +1,10 @@
-function computerPlay(){
+function computerSelection(){
   let items = Array("rock","paper","scissors");
   let item = items[Math.floor(Math.random() * items.length)];
   return item;
 }
 
-function playRound(playerSelection, computerSelection){
+function gameOutcome(playerSelection, computerSelection){
   let outcome = 0; //0 means lose, 1 means win, 2 means tie
   if(playerSelection == "rock" && computerSelection == "scissors"){
     outcome = 1;
@@ -18,6 +18,10 @@ function playRound(playerSelection, computerSelection){
   else if(playerSelection == computerSelection) {
     outcome = 2;
   }
+  return outcome;
+}
+
+function gameResultMessage(playerSelection, computerSelection, outcome){
   let result = "You lose! " + computerSelection + " beats " + playerSelection;
   if(outcome == 1){
     result = "You win! " + playerSelection + " beats " + computerSelection;
