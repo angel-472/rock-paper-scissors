@@ -76,8 +76,8 @@ function playRound(playerSelection){
 }
 
 function endGame(){
-  [".game-header",".game",".result-container"].forEach(function(value) {
-    let element = document.querySelector(value);
+  [".game-header",".game",".result-container"].forEach(function(className) {
+    let element = document.querySelector(className);
     element.remove();
   });
   let endCard = document.querySelector('.end-card');
