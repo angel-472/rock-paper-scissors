@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> <!--icon library-->
     <title>Rock Paper Scissors</title>
@@ -10,9 +10,22 @@
 
   <body>
     <div class="container">
-      <button class="rock"><i class="fa-solid fa-hand-fist"></i></button>
-      <button class="paper">Paper</button>
-      <button class="scissors">Scissors</button>
+      <div class="game-header">
+        <h1>Rock Paper Scissors</h1>
+        <div class="score">
+          <a class="player">you</a>
+          <a>First to 5 wins</a>
+          <a class="computer">computer</a>
+        </div>
+      </div>
+      <div class="game">
+        <button class="rock"><i class="fa-solid fa-hand-fist"></i></button>
+        <button class="paper"><i class="fa-solid fa-scroll"></i></button>
+        <button class="scissors"><i class="fa-solid fa-scissors"></i></button>
+      </div>
+      <div class="result-container">
+        <p class="result">Select an item to start!</p>
+      </div>
     </div>
   </body>
 </html>

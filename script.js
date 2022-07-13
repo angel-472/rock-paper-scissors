@@ -1,4 +1,5 @@
-function computerSelection(){
+//game logic
+function randomItem(){
   let items = Array("rock","paper","scissors");
   let item = items[Math.floor(Math.random() * items.length)];
   return item;
@@ -30,4 +31,25 @@ function gameResultMessage(playerSelection, computerSelection, outcome){
     result = "It's a tie!";
   }
   return result;
+}
+//
+
+const resultDisplay = document.querySelector('.result');
+const playerScoreDisplay = document.querySelector('.score .player');
+const computerScoreDisplay = document.querySelector('.score .computer');
+
+playerScoreDisplay.innerText = "👤: 0"
+computerScoreDisplay.innerText = "🤖: 0"
+
+const rockButton = document.querySelector('.rock');
+const paperButton = document.querySelector('.paper');
+const scissorsButton = document.querySelector('.scissors');
+
+rockButton.addEventListener('click', function(e) {
+  playRound("rock");
+});
+
+function playRound(playerSelection){
+  let computerSelection = randomItem();
+
 }
