@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 105vh;
 }
 
 body {
@@ -59,8 +59,12 @@ body {
   height: 150px;
   font-size: 80px;
   margin: 10px;
-  border-radius: 15px;
+  border-radius: 75px;
   border: 0;
+}
+
+.game button:active {
+  background-color: #9c9c9c;
 }
 
 .result-container {
@@ -75,4 +79,54 @@ body {
   font-size: 20px;
   margin: 0px;
   padding: 5px 10px;
+}
+
+.end-card {
+  display: none;
+  background-color: #30343d;
+  width: 100%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px 0px;
+  border-radius: 20px;
+}
+
+.end-card h1 {
+  margin: 0px;
+  font-size: 38px;
+  text-transform: uppercase;
+}
+
+.end-card p {
+  margin: 8px 0px 0px 0px;
+  font-size: 18px;
+}
+
+.end-card button {
+  background-color: #13d42d;
+  border: 0;
+  color: white;
+  font-weight: bold;
+  padding: 12px 17px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 5px 0 #0b8a1c;
+  font-size: 20px;
+  margin: 24px 0px 0px 0px;
+}
+
+.end-card button:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+/* borders */
+.game-header {
+  border-radius: 5px 5px 0px 0px;
+}
+
+.result-container {
+  border-radius: 0px 0px 5px 5px;
 }

@@ -44,6 +44,7 @@ const scissorsButton = document.querySelector('.scissors');
 
 let playerScore = 0;
 let computerScore = 0;
+let maxScore = 5;
 
 playerScoreDisplay.innerText = "👤: 0"
 computerScoreDisplay.innerText = "🤖: 0"
@@ -66,7 +67,32 @@ function playRound(playerSelection){
   } else {
     resultDisplay.style.backgroundColor = null;
   }
+  if(playerScore >= maxScore || computerScore >= maxScore){
+    endGame();
+  }
   resultDisplay.innerText = resultMessage;
   playerScoreDisplay.innerText = `👤: ${playerScore}`
   computerScoreDisplay.innerText = `🤖: ${computerScore}`
 }
+
+function endGame(){
+  [".game-header",".game",".result-container"].forEach(function(value) {
+    let element = document.querySelector(value);
+    element.remove();
+  });
+  let endCard = document.querySelector('.end-card');
+  let endCardTitle = document.querySelector('.end-card h1');
+  let endCardText = document.querySelector('.end-card p');
+  if(playerScore > computerScore){
+    endCardTitle.innerText = "You won the game!";
+  } else {
+    endCardTitle.innerText = "You lost the game!";
+  }
+  endCardText.innerText = `You scored ${playerScore}, the computer scored ${computerScore}`
+  endCard.style.display = "flex";
+}
+
+const playAgainButton = document.querySelector('.play-again')
+playAgainButton.addEventListener('click', function(e) {
+  location.reload();
+});
